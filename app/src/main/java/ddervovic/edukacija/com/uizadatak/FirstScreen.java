@@ -1,5 +1,6 @@
 package ddervovic.edukacija.com.uizadatak;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,7 +19,7 @@ import java.util.List;
 
 
 public class FirstScreen extends ActionBarActivity {
-    private List<Osobe> mojeOsobe = new ArrayList<Osobe>();
+    private List<Osobe> mojeOsobe = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,26 +31,24 @@ public class FirstScreen extends ActionBarActivity {
         registerClickCallback();
     }
 
-
-
-
     private void generirajOsobe() {
-        mojeOsobe.add( new Osobe("Kristina Grguricin", "Kako si?", "0915555555", R.drawable.heart) );
-        mojeOsobe.add( new Osobe("Leonardo Gospodnetic", "Ae", "0915555555", R.drawable.fish) );
-        mojeOsobe.add( new Osobe("Matija Percec", "Kako sam jak!", "0915555555", R.drawable.down) );
-        mojeOsobe.add( new Osobe("Sanja Saric", "Palacinke", "0915555555", R.drawable.star) );
-        mojeOsobe.add( new Osobe("Matija Percec", "Kako sam jak!", "0915555555", R.drawable.down) );
-        mojeOsobe.add( new Osobe("Sanja Saric", "Palacinke", "0915555555", R.drawable.star) );
-        mojeOsobe.add( new Osobe("Matija Percec", "Kako sam jak!", "0915555555", R.drawable.down) );
-        mojeOsobe.add( new Osobe("Sanja Saric", "Palacinke", "0915555555", R.drawable.star) );
-        mojeOsobe.add( new Osobe("Mate Bogovic", "Kme...", "0915555555", R.drawable.bug) );
-        mojeOsobe.add(new Osobe("Goran Jaksic", "Gdje su mi tabletice?", "0915555555", R.drawable.help));
-        mojeOsobe.add(new Osobe("Goran Jaksic", "Gdje su mi tabletice?", "0915555555", R.drawable.help));
-        mojeOsobe.add(new Osobe("Goran Jaksic", "Gdje su mi tabletice?", "0915555555", R.drawable.help));
-        mojeOsobe.add(new Osobe("Goran Jaksic", "Gdje su mi tabletice?", "0915555555", R.drawable.help));
-        mojeOsobe.add(new Osobe("Neven Susa", "Ufffff...", "0915555555", R.drawable.up));
+        mojeOsobe.add( new Osobe( "Kristina Grguricin", "Kako si?", "0915555555", R.drawable.heart, 143 ) );
+        mojeOsobe.add( new Osobe( "Leonardo Gospodnetic", "Ae", "0915555555", R.drawable.fish, 23 ));
+        mojeOsobe.add( new Osobe( "Matija Percec", "Kako sam jak!", "0915555555", R.drawable.down, 20 ) );
+        mojeOsobe.add( new Osobe( "Sanja Saric", "Palacinke", "0915555555", R.drawable.star, 52) );
+        mojeOsobe.add( new Osobe("Matija Percec", "Kako sam jak!", "0915555555", R.drawable.down, 64) );
+        mojeOsobe.add( new Osobe("Sanja Saric", "Palacinke", "0915555555", R.drawable.star, 24) );
+        mojeOsobe.add( new Osobe("Matija Percec", "Kako sam jak!", "0915555555", R.drawable.down, 44) );
+        mojeOsobe.add( new Osobe("Sanja Saric", "Palacinke", "0915555555", R.drawable.star, 55) );
+        mojeOsobe.add( new Osobe("Mate Bogovic", "Kme...", "0915555555", R.drawable.bug, 13) );
+        mojeOsobe.add(new Osobe("Goran Jaksic", "Gdje su mi tabletice?", "0915555555", R.drawable.help, 42));
+        mojeOsobe.add(new Osobe("Goran Jaksic", "Gdje su mi tabletice?", "0915555555", R.drawable.help, 42));
+        mojeOsobe.add(new Osobe("Goran Jaksic", "Gdje su mi tabletice?", "0915555555", R.drawable.help, 42));
+        mojeOsobe.add(new Osobe("Goran Jaksic", "Gdje su mi tabletice?", "0915555555", R.drawable.help, 42));
+        mojeOsobe.add(new Osobe("Neven Susa", "Ufffff...", "0915555555", R.drawable.up, 25));
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,7 +65,9 @@ public class FirstScreen extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_navigational_drawer) {
+            Intent intent = new Intent( this, NavigationDrawerTest.class );
+            startActivity( intent );
             return true;
         }
 
@@ -102,7 +103,7 @@ public class FirstScreen extends ActionBarActivity {
             imageView.setImageResource( osoba.getSlika() );
 
             TextView txtIme = (TextView) itemView.findViewById( R.id.txtIme );
-            String ime = osoba.getIme() + " (" + osoba.getBroj() + ")";
+            String ime = osoba.getIme() + " (" + Integer.toString( osoba.getBrojPoruka() ) + ")";
             txtIme.setText( ime );
 
             TextView txtSMS = (TextView) itemView.findViewById( R.id.txtSMS );
