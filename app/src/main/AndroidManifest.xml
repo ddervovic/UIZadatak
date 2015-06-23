@@ -21,6 +21,10 @@
             android:name=".NavigationDrawerTest"
             android:label="@string/title_activity_navigation_drawer_test" >
         </activity>
+        <activity
+            android:name=".MojActivitySaNavigationDrawerom"
+            android:label="@string/title_activity_moj_activity_sa_navigation_drawerom" >
+        </activity>
     </application>
 
 </manifest>

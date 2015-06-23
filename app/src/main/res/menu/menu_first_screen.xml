@@ -9,4 +9,11 @@
         android:orderInCategory="99"
         app:showAsAction="never"
         />
+
+    <item
+        android:id="@+id/action_navigational_drawer_moj"
+        android:title="@string/menu_selection_moj_navigational_drawer"
+        android:orderInCategory="99"
+        app:showAsAction="never"
+        />
 </menu>

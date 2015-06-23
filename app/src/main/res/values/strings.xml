@@ -14,4 +14,16 @@
 
     <string name="action_example">Example action</string>
     <string name="menu_firstscreen_navigational_drawer">Navigation drawer</string>
+    <string name="title_activity_moj_activity_sa_navigation_drawerom">
+        MojActivitySaNavigationDrawerom
+    </string>
+    <string name="cma">Cma</string>
+    <string name="menu_selection_moj_navigational_drawer">Moj navigational drawer</string>
+    <string-array name="lista_izbora_nav_drawer">
+        <item>Prvi</item>
+        <item>Drugi</item>
+        <item>Treci</item>
+        <item>Cetvrti</item>
+        <item>Peti</item>
+    </string-array>
 </resources>

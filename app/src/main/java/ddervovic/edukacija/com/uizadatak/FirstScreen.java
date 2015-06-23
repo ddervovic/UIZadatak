@@ -66,8 +66,11 @@ public class FirstScreen extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_navigational_drawer) {
-            Intent intent = new Intent( this, NavigationDrawerTest.class );
-            startActivity( intent );
+            startActivityWithIntent(NavigationDrawerTest.class);
+            return true;
+        }
+        else if( id == R.id.action_navigational_drawer_moj ){
+            startActivityWithIntent( MojActivitySaNavigationDrawerom.class );
             return true;
         }
 
@@ -124,5 +127,10 @@ public class FirstScreen extends ActionBarActivity {
                 Toast.makeText(FirstScreen.this, poruka, Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void startActivityWithIntent( Class activityToStart ){
+        Intent intent = new Intent( this, activityToStart );
+        startActivity( intent );
     }
 }
