@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgSlikaOsobe"
+        android:src="@drawable/fish"
+        android:maxWidth="60dp"
+        android:maxHeight="60dp"
+        android:longClickable="false"
+        android:adjustViewBounds="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/txtIme"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imgSlikaOsobe"
+        android:layout_toEndOf="@+id/imgSlikaOsobe" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/txtSMS"
+        android:layout_alignBottom="@+id/imgSlikaOsobe"
+        android:layout_toRightOf="@+id/imgSlikaOsobe"
+        android:layout_toEndOf="@+id/imgSlikaOsobe" />
+
+</RelativeLayout>
