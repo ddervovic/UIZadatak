@@ -26,4 +26,9 @@
         <item>Cetvrti</item>
         <item>Peti</item>
     </string-array>
+    <string name="title_activity_view_pager">ViewPagerActivity</string>
+    <string name="menu_moj_view_pager">Moj view pager</string>
+    <string name="action_new_message_text">New message</string>
+    <string name="action_search_title">Search</string>
+    <string name="title_activity_message_view">MessageView</string>
 </resources>

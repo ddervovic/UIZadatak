@@ -73,6 +73,10 @@ public class FirstScreen extends ActionBarActivity {
             startActivityWithIntent( MojActivitySaNavigationDrawerom.class );
             return true;
         }
+        else if ( id == R.id.action_view_pager ){
+            startActivityWithIntent( ViewPagerActivity.class );
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }

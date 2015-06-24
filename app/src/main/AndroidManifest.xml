@@ -25,6 +25,10 @@
             android:name=".MojActivitySaNavigationDrawerom"
             android:label="@string/title_activity_moj_activity_sa_navigation_drawerom" >
         </activity>
+        <activity
+            android:name=".ViewPagerActivity"
+            android:label="@string/title_activity_view_pager" >
+        </activity>
     </application>
 
 </manifest>
