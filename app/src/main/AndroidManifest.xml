@@ -29,6 +29,10 @@
             android:name=".ViewPagerActivity"
             android:label="@string/title_activity_view_pager" >
         </activity>
+        <activity
+            android:name=".ActivityMessageView"
+            android:label="@string/title_activity_activity_message_view" >
+        </activity>
     </application>
 
 </manifest>

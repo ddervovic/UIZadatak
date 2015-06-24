@@ -19,7 +19,9 @@ import java.util.List;
 
 
 public class FirstScreen extends ActionBarActivity {
-    private List<Osobe> mojeOsobe = new ArrayList<>();
+    public static final List<Osobe> mojeOsobe = new ArrayList<>();
+    public static final String PASSED_PARAMS = "PassedParams";
+    public static final String POSITION = "Position";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,15 +68,15 @@ public class FirstScreen extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_navigational_drawer) {
-            startActivityWithIntent(NavigationDrawerTest.class);
+            startActivityWithIntent(NavigationDrawerTest.class, null);
             return true;
         }
         else if( id == R.id.action_navigational_drawer_moj ){
-            startActivityWithIntent( MojActivitySaNavigationDrawerom.class );
+            startActivityWithIntent( MojActivitySaNavigationDrawerom.class, null );
             return true;
         }
         else if ( id == R.id.action_view_pager ){
-            startActivityWithIntent( ViewPagerActivity.class );
+            startActivityWithIntent( ViewPagerActivity.class, null );
             return true;
         }
 
@@ -127,14 +129,20 @@ public class FirstScreen extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View viewClicked, int position, long id) {
                 Osobe osoba = mojeOsobe.get( position );
-                String poruka = "Kliknulu ste poruku " + osoba.getIme() + "-" + osoba.getSms();
-                Toast.makeText(FirstScreen.this, poruka, Toast.LENGTH_LONG).show();
+                //String poruka = "Kliknulu ste poruku " + osoba.getIme() + "-" + osoba.getSms();
+                //Toast.makeText(FirstScreen.this, poruka, Toast.LENGTH_LONG).show();
+                Bundle bundle = new Bundle();
+                bundle.putInt( POSITION, position );
+                startActivityWithIntent( ActivityMessageView.class, bundle );
             }
         });
     }
 
-    private void startActivityWithIntent( Class activityToStart ){
+    private void startActivityWithIntent( Class activityToStart, Bundle bundle ){
         Intent intent = new Intent( this, activityToStart );
+
+        if ( bundle != null ) intent.putExtra( PASSED_PARAMS, bundle );
+
         startActivity( intent );
     }
 }

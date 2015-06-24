@@ -31,4 +31,5 @@
     <string name="action_new_message_text">New message</string>
     <string name="action_search_title">Search</string>
     <string name="title_activity_message_view">MessageView</string>
+    <string name="title_activity_activity_message_view">ActivityMessageView</string>
 </resources>
